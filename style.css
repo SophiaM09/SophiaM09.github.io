@@ -1,5 +1,5 @@
 body {
-    background:rgb(45, 45, 45);
+    background-image: url("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR0s0Si-WW53Yb0MHlOSeaHe921v-dPwh5O5WDFTsyIQRWvjTrT:https://i.pinimg.com/736x/13/75/59/137559dd8428ef1289987a53ac109f94.jpg&s");
     color: rgb(45, 45, 45);
     padding: 10px;
     font-family: 'Courier New', Courier, monospace
@@ -11,16 +11,18 @@ body {
 
 /* navigation menu */
 nav {
-    background:rgb(147, 25, 213);
+    border: white;
     margin: 0 auto;
     display: flex;
     padding: 10px;
 }
 
 h1 {
+    font-family: "Lucida Handwriting", cursive;
+    font-size: 60px;
     display: flex;
     align-items: center;
-    color: black;
+    color: white;
     flex: 1;
     margin: 0;
 }
@@ -38,13 +40,13 @@ h1 {
 }
 
 a {
-    text-decoration: none;
-    color: #fff;
+    font-family:cursive, "Segeo Script";
+    color: white;
 }
 
 /* main container area beneath menu */
 main {
-    background: rgb(232, 64, 204);
+   
     display: flex;
     margin-top: 20px;
 }
@@ -55,13 +57,19 @@ main {
 }
 
 .sidebar-img {
+    
     width: 200px;
-   
-}
-.sidebar-img {
-    border-radius:50%;
-}
+    height:200px; 
 
+}
+p 
+{ color: white;
+    font-family:"Segoe Script", cursive;
+    margin-right: 50px;
+    margin-left: 10px;
+    margin-top: -40px;
+
+}
 .content {
     flex: 1;
     padding: 15px;
@@ -69,11 +77,21 @@ main {
 
 /* interests section styles */
 #interests {
+    font-family:"Segoe Script", cursive;
+    color: white;
     border: 4px silver ridge;
-    padding: 8px;
-    margin-top: 20px;
+    padding: 4px;
+    margin-top: 10px;
 }
 
-h2, h3 {
+h2{ 
+    font-size: 50px;
+    font-family:"Segoe Script", cursive; 
+    color:white;
+    margin-left: -250px;
+    margin-top: 200px;
+
+}
+ h3 {
     margin: 0px;
 }
