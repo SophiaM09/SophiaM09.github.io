@@ -94,28 +94,36 @@ h2{
 }
  h3 {
     margin: 0px;
-/* Portfolio styles */
+ }
+
+    /* Portfolio styles */
 .content h1 {
-  color: black;
+  color: white;
+
+  
 }
 
 #portfolio {
   list-style-type: none;
   padding-left: 0;
+font-family: "Segeo Script", cursive;
 }
 
 #portfolio li {
-  background: #fff;
+  background: black;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
+    font-family: "Segeo Script", cursive;
 }
 
 #portfolio li:hover {
-  background: #eee;
+  background: white;
+  font-family: "Segeo Script", cursive; 
 }
 
 #portfolio a {
+    font-family: "Segeo Script", cursive; 
   text-decoration: none;
   color: #454545;
 }
