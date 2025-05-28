@@ -46,7 +46,7 @@ a {
 
 /* main container area beneath menu */
 main {
-   
+
     display: flex;
     margin-top: 20px;
 }
@@ -73,6 +73,7 @@ p
 .content {
     flex: 1;
     padding: 15px;
+    
 }
 
 /* interests section styles */
@@ -102,11 +103,10 @@ h2{
 
   
 }
-
 #portfolio {
   list-style-type: none;
   padding-left: 0;
-font-family: "Segeo Script", cursive;
+font-family: "Segoe Script", cursive;
 }
 
 #portfolio li {
@@ -114,16 +114,16 @@ font-family: "Segeo Script", cursive;
   padding: 10px;
   border-radius: 10px;
   margin-bottom: 10px;
-    font-family: "Segeo Script", cursive;
+    font-family: "Segoe Script", cursive;
 }
 
 #portfolio li:hover {
   background: white;
-  font-family: "Segeo Script", cursive; 
+  font-family: "Segoe Script", cursive; 
 }
 
 #portfolio a {
-    font-family: "Segeo Script", cursive; 
+    font-family: "Segoe Script", cursive; 
   text-decoration: none;
-  color: #454545;
+  color: white;
 }
