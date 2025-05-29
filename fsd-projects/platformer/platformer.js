@@ -41,6 +41,10 @@ $(function () {
     createPlatform(1200, 200, 50, 100, "black");
     createPlatform(150, 350, 100, 150, "black");
     createPlatform(175, 350, 50, 10, "#add8e6");
+    createPlatform(900, 400, 100, 50, "black");
+    createPlatform(600, 150, 100, 50, "black");
+    createPlatform(400, 650, 100, 100, "black");
+    
     
 
 
@@ -51,8 +55,8 @@ $(function () {
 
     
     // TODO 4 - Create Cannons
-    createCannon("top", 1350, 1000);
-    createCannon("bottom", 100, 900);
+    createCannon("top", 1350, 2000);
+    createCannon("bottom", 100, 1100);
     createCannon("right", 550, 2000);
         //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
