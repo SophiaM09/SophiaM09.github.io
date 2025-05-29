@@ -37,12 +37,14 @@ $(function () {
     createPlatform(0, 700, 1400, 50, "black"); //fourth platform
     createPlatform(0, 0, 50, 750, "black"); // left platform
     createPlatform(1350, 0, 50, 750, "black"); // upper right platform
-    createPlatform(1150, 100, 50, 250, "black"); // first long platform
+    createPlatform(1150, 180, 50, 150, "black"); // first long platform
     createPlatform(1000, 300, 200, 50, "black"); // second bottom platform
-    createPlatform(150, 350, 100, 150, "black");
+    createPlatform(150, 450, 100, 150, "black");
     createPlatform(175, 350, 50, 10, "#add8e6");
-    createPlatform(600, 150, 100, 50, "black");
-    createPlatform(400, 650, 100, 100, "black");
+    createPlatform(600, 150, 100, 50, "black"); // first floor platform
+    createPlatform(200, 550, 100, 40, "black");
+    createPlatform(370, 680, 100, 20, "black"); //bottom platform little
+    createPlatform(800, 430, 100, 30, "black");
     
     
 
@@ -56,7 +58,7 @@ $(function () {
     // TODO 4 - Create Cannons
     createCannon("top", 1350, 2000);
     createCannon("bottom", 100, 1100);
-    createCannon("left", 430, 2000);
+    createCannon("left", 430, 2500);
         //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
