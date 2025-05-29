@@ -31,17 +31,16 @@ $(function () {
 
 
     // TODO 2 - Create Platforms
-    createPlatform(0, 700, 1400, 50, "black");
-    createPlatform(400, 450, 1400, 50, "black");
-    createPlatform(0, 0, 1400, 50, "black"); 
-    createPlatform(0, 200, 1000, 50, "black");
-    createPlatform(0, 0, 50, 750, "black");
-    createPlatform(1350, 0, 50, 750, "black");
-    createPlatform(1150, 150, 50, 100, "black");
-    createPlatform(1200, 200, 50, 100, "black");
+    createPlatform(0, 0, 1400, 50, "black");  //first platform
+    createPlatform(0, 200, 900, 50, "black"); //second platform
+    createPlatform(500, 450, 1400, 50, "black"); //third platform
+    createPlatform(0, 700, 1400, 50, "black"); //fourth platform
+    createPlatform(0, 0, 50, 750, "black"); // left platform
+    createPlatform(1350, 0, 50, 750, "black"); // upper right platform
+    createPlatform(1150, 100, 50, 250, "black"); // first long platform
+    createPlatform(1000, 300, 200, 50, "black"); // second bottom platform
     createPlatform(150, 350, 100, 150, "black");
     createPlatform(175, 350, 50, 10, "#add8e6");
-    createPlatform(900, 400, 100, 50, "black");
     createPlatform(600, 150, 100, 50, "black");
     createPlatform(400, 650, 100, 100, "black");
     
@@ -52,12 +51,12 @@ $(function () {
     createCollectable("diamond", 500, 100, 0.7, 1.0);
     createCollectable("steve", 1250, 200, 0.7, 1.0);
     createCollectable("max", 100, 300, 0.7, 1.0);
-
+    createCollectable("grace", 1250, 600, 0.7, 1.0);
     
     // TODO 4 - Create Cannons
     createCannon("top", 1350, 2000);
     createCannon("bottom", 100, 1100);
-    createCannon("right", 550, 2000);
+    createCannon("left", 430, 2000);
         //////////////////////////////////
     // ONLY CHANGE ABOVE THIS POINT //
     //////////////////////////////////
