@@ -39,12 +39,13 @@ $(function () {
     createPlatform(1350, 0, 50, 750, "black"); // upper right platform
     createPlatform(1150, 180, 50, 150, "black"); // first long platform
     createPlatform(1000, 300, 200, 50, "black"); // second bottom platform
-    createPlatform(150, 450, 100, 150, "black");
-    createPlatform(175, 350, 50, 10, "#add8e6");
+    createPlatform(150, 450, 100, 140, "black");
+    createPlatform(175, 350, 30, 30, "#add8e6");
     createPlatform(600, 150, 100, 50, "black"); // first floor platform
+    createPlatform(590, 155.5, 24.5, 28.5, "#add8e6");
     createPlatform(200, 550, 100, 40, "black");
     createPlatform(370, 680, 100, 20, "black"); //bottom platform little
-    createPlatform(800, 430, 100, 30, "black");
+    createPlatform(800, 430, 100, 40, "black");
     
     
 
