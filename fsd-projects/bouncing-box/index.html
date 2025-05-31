@@ -11,10 +11,10 @@
 			width: 100px;
 			height: 100px;
 			background-image: url("https://static.vecteezy.com/system/resources/previews/048/114/597/non_2x/realistic-white-sphere-blank-white-circle-with-reflections-billiard-ball-snooker-pool-ball-on-transparent-background-generative-ai-free-png.png");
-			background-size: cover;
+			background-size:cover; /* fix the background image to */
 			display: block;
 			font-size: 300%;
-			color: black;
+			color: white;
 			text-align: center;
 			user-select: none;
 			position: absolute;
@@ -40,7 +40,7 @@
 	<!-- HTML for the box -->
 	<div class="box">?</div>
 	
-
+	
 	<script>
 		(function () {
 			'use strict'
@@ -58,13 +58,14 @@
 			var interval = setInterval(update, 50);
 			function endGame() {
 				clearInterval(interval);
-				 alert("Game Over!");
-
-			};
-			
+				alert("Game Over!");
+				
+				
+		
+	
+			}
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
 			box.on('click', handleBoxClick);	
-			board.on('click', handleMisClicks);
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
@@ -87,8 +88,7 @@
 			var positionY = 0;
 			var speedY = 10;
 			var boardHeight = jQuery(window).height();
-			var misClicks = 0;
-			
+	
 			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
@@ -124,21 +124,12 @@
 		  points = points + 1;
 		  speed = 3 * points + 10;
 		  changeBoxText(points);
-		  };
+		  
+			
+		};
+
 		
-		function handleMisClicks () {
-			boardHeight;
-			boardWidth; 
-			misClicks = misClicks + 1;
-				if (misClicks === 5 ) {
-					endGame();
-				}
 		
-			};
-		    	
-
-
-
 
 		})();
 		</script>
