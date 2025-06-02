@@ -90,7 +90,8 @@
 			var positionY = 0;
             var speedY = 10;
             var boardHeight = jQuery(window).height();
-			var randNum = Math.random() * 100
+			var randomX = Math.random() * (boardWidth - boxWidth());
+			var randomY = Math.random() * (boardHeight - boxHeight());
 			var misclicks = 0;
 			var gameOver= false; 
 			
@@ -126,15 +127,16 @@
 			*/
 		function handleBoxClick() {
 			if (gameOver) return;
-		  positionX = randNum;
+		  positionX = Math.random() * (boardWidth - box.width());
+    	  positionY = Math.random() * (boardHeight - box.height());
 		  points = points + 1;
-		  speed = 3 * points + 10;
+		  speed = 3 * points + 20;
 		  changeBoxText(points);
 
 		}
 
 		function handleMisclick (e) {
-			 if (jQuery(e.target).is(box)) return;
+			 if (jQuery(e.target).closest('.box').length) return;
 			 misclicks = misclicks + 1;
     		if (misclicks >= 5) {
         	gameOver = true;
