@@ -26,6 +26,7 @@
 		
 		.board {
 			height: 100vh;
+			width: 200vh ; 
 			background-image: url("https://static.vecteezy.com/system/resources/thumbnails/010/009/725/small_2x/pool-table-illustration-green-background-with-billiard-game-and-sports-theme-editable-vector.jpg"); 
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -65,14 +66,14 @@
 	
 			}
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);	
-			board.on('click', handleBoardClick); 
+			box.on('click', handleBoxClick);
+			board.on ('click', handleMisclick); 
+		
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
 				box.css("left", newPositionX);
 				box.css("top", newPositionY);
 			}
-
 			// changes the text displayed on the Box
 			function changeBoxText(newText) {
 				box.text(newText);
@@ -89,7 +90,10 @@
 			var positionY = 0;
             var speedY = 10;
             var boardHeight = jQuery(window).height();
-			var randNum = Math.random() * boardWidth;   
+			var randNum = Math.random() * 100
+			var misclicks = 0;
+			var gameOver= false; 
+			
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
@@ -121,15 +125,25 @@
 			the left side of the screen.
 			*/
 		function handleBoxClick() {
-          positionX = randNum;
+			if (gameOver) return;
+		  positionX = randNum;
 		  points = points + 1;
 		  speed = 3 * points + 10;
 		  changeBoxText(points);
-			
-		};
 
-		
-		
+		}
+
+		function handleMisclick (e) {
+			 if (jQuery(e.target).is(box)) return;
+			 misclicks = misclicks + 1;
+    		if (misclicks >= 5) {
+        	gameOver = true;
+       		 endGame();
+			 window.location.reload();
+    		}
+			
+		}
+		  
 
 		})();
 		</script>
