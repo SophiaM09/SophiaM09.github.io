@@ -59,20 +59,21 @@
 			var box = jQuery('.box');	// reference to the HTML .box element
 			var board = jQuery('.board');	// reference to the HTML .board element
 			var boardWidth = board.width();	// the maximum X-Coordinate of the screen
-
+			var boardHeight = board.height();
 			// Every 50 milliseconds, call the update Function (see below)
 			var interval = setInterval(update, 50);
 			function endGame() {
 				clearInterval(interval);
 				alert("Game Over!");
-				
-				
-		
-	
 			}
 			// Every time the box is clicked, call the handleBoxClick Function (see below)
-			box.on('click', handleBoxClick);
-			board.on ('click', handleMisclick); 
+			box.on('click', function (event) {
+			event.stopPropagation();
+			handleBoxClick();
+			});
+			board.on('click', function () {	
+				handleMisclick();
+			});
 		
 			// moves the Box to a new position on the screen along the X-Axis
 			function moveBoxTo(newPositionX, newPositionY) {
@@ -89,68 +90,62 @@
 			//////////////////////////////////////////////////////////////////
 
 			// TODO 2 - Variable declarations 
+			var misclicks = 0;
 			var positionX = 0;
+			var positionY = 0;
 			var points = 0;
 			var speed = 10;
-			var positionY = 0;
             var speedY = 10;
-            var boardHeight = jQuery(window).height();
-			var randomX = Math.random() * (boardWidth - boxWidth());
-			var randomY = Math.random() * (boardHeight - boxHeight());
-			var misclicks = 0;
-			var gameOver= false; 
-			
+		
 			/* 
 			This Function will be called 20 times/second. Each time it is called,
 			it should move the Box to a new location. If the box drifts off the screen
 			turn it around! 
 			*/
 			function update() {
-				if (gameOver) return;
 				moveBoxTo(positionX, positionY);
 				positionX = positionX + speed;
-				if (positionX > boardWidth) {
+				if (positionX > boardWidth - box.width()) {
 					speed = speed * -1;
 				}
 				if (positionX < 0) {
 					speed *= -1;
 				}
+				
 		
-				positionY= positionY + speedY;
-                if (positionY > boardHeight) {
+				positionY = positionY + speedY;
+                if (positionY > boardHeight - box.height()) {
                     speedY = speedY * -1;
                 }
                 if (positionY < 0) {
                     speedY *= -1;
-                }
-
-			};
-
+				
+				}	
+				
+				
+			}
 			/* 
 			This Function will be called each time the box is clicked. Each time it is called,
 			it should increase the points total, increase the speed, and move the box to
 			the left side of the screen.
 			*/
-		function handleBoxClick() {
-			if (gameOver) return;
-		  positionX = Math.random() * (boardWidth - box.width());
-    	  positionY = Math.random() * (boardHeight - box.height());
-		  points = points + 1;
-		  speed = 3 * points + 20;
-		  changeBoxText(points);
-
-		}
-
-		function handleMisclick (e) {
-			 if (jQuery(e.target).closest('.box').length) return;
-			 misclicks = misclicks + 1;
-    		if (misclicks >= 5) {
-        	gameOver = true;
-       		 endGame();
-    		}
-			
-		}
-		  
+			function handleBoxClick() {
+				positionX = Math.random() * (boardWidth - box.width());
+    	  		positionY = Math.random() * (boardHeight - box.height());
+		  		points = points + 1;
+		  		speed = 3 * points + 20;
+		  		changeBoxText(points);
+			}
+	
+			function handleMisclick () {
+            	misclicks++;
+            	if (misclicks >= 5) {
+             	endGame();
+				window.location.reload();
+        
+				}
+			}
+		
 
 		})();
 		</script>
