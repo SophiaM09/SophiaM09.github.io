@@ -25,8 +25,13 @@
 		}
 		
 		.board {
+			position:fixed ; /*can delete later*/
+			top: 0; 
+			left: 0;
+			right: 0;
+			bottom: 0;
 			height: 100vh;
-			width: 200vh ; 
+			width: 100vw ; 
 			background-image: url("https://static.vecteezy.com/system/resources/thumbnails/010/009/725/small_2x/pool-table-illustration-green-background-with-billiard-game-and-sports-theme-editable-vector.jpg"); 
 			background-repeat: no-repeat;
 			background-size: cover;
@@ -101,6 +106,7 @@
 			turn it around! 
 			*/
 			function update() {
+				if (gameOver) return;
 				moveBoxTo(positionX, positionY);
 				positionX = positionX + speed;
 				if (positionX > boardWidth) {
@@ -141,7 +147,6 @@
     		if (misclicks >= 5) {
         	gameOver = true;
        		 endGame();
-			 window.location.reload();
     		}
 			
 		}
