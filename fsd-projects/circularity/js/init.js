@@ -8,8 +8,8 @@ var init = function (window) {
         canvas = app.canvas, 
         view = app.view,
         fps = draw.fps('#000');
-        
-    
+
+  
     window.opspark.makeGame = function() {
         
         window.opspark.game = {};
@@ -24,16 +24,16 @@ var init = function (window) {
         var circles = [];
         // TODO 2 : Create a function that draws a circle 
         function drawCircle(){
-        circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
-        physikz.addRandomVelocity(circle, canvas, 5, 5);
-        view.addChild(circle);
-        circles.push(circle);
+            circle = draw.randomCircleInArea(canvas, true, true, "#999", 2);
+            physikz.addRandomVelocity(circle, canvas, 5, 5);
+            view.addChild(circle);
+            circles.push(circle);
         }
         // TODO 3 : Call the drawCircle() function
         // TODO 7 : Use a loop to create multiple circles
-       for ( var i = 0; i < 101; i++){
-        drawCircle();
-       }
+        for (var i = 0; i < 500; i++) {
+            drawCircle();
+        }
        
         ///////////////////
         // PROGRAM LOGIC //
@@ -49,8 +49,9 @@ var init = function (window) {
             // TODO 5 : Call game.checkCirclePosition() on your circles
             // TODO 8 / TODO 9 : Iterate over the array
            for (var i = 0; i < circles.length; i++ ){
-             physikz.updatePosition(circles[i]);
-             game.checkCirclePosition(circles[i]);
+            physikz.updatePosition(circles[i]); // orignial code just circle//
+            game.checkCirclePosition(circles[i]);
+            
            }
             
         }
@@ -97,6 +98,7 @@ var init = function (window) {
         app.addUpdateable(window.opspark.game);
     }
 };
+    
 
 // DO NOT REMOVE THIS CODE //////////////////////////////////////////////////////
 if((typeof process !== 'undefined') &&
@@ -104,3 +106,8 @@ if((typeof process !== 'undefined') &&
     // here, export any references you need for tests //
     module.exports = init;
 }
+
+      
+
+    
+        

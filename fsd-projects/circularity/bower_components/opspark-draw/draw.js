@@ -24,9 +24,9 @@
     }
     
     function blurFilterOn(displayObject, blurX, blurY, quality) {
-        blurX = (blurX) ? blurX : 5;
-        blurY = (blurY) ? blurY : 5;
-        quality = (quality) ? quality : 1;
+        blurX = (blurX) ? blurX : 0;
+        blurY = (blurY) ? blurY : 0;
+        quality = (quality) ? quality : 10;
         
         var blurFilter = new createjs.BlurFilter(blurX, blurY, quality);
         displayObject.filters = (displayObject.filters) ? displayObject.filters.concat(blurFilter) : [blurFilter];
@@ -230,6 +230,7 @@
         	var dimensions = buildDimensions(TYPE_CIRCULAR, radius * 2, radius * 2, xOffset, yOffset, radius);
         	
         	var shape = (onShape) ? onShape : new createjs.Shape();
+            
         	shape.graphics
         		.setStrokeStyle(strokeStyle)
         		.beginStroke(strokeColor)
